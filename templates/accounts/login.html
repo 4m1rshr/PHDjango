@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <div class="jumbotron">
+        {% if error %}
+        {{ error }}
+        {% endif %}
+    <br/>
+    <br/>
+    <h1>Login</h1>
+    <br/>
+    <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    Username:
+    <br/>
+    <input type="text" name="username"/>
+    <br/>
+    Password:
+    <br/>
+    <input type="password" name="password">
+        <br/>
+        <br/>
+    <input class="btn btn-info" type="submit" value="Login">
+
+    </form>
+    </div>
+    </div>
+{% endblock %}
